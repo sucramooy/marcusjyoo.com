@@ -186,7 +186,7 @@ export default function App() {
           <div className="flex flex-wrap justify-center gap-4 text-[#6272a4]">
             <span>Internship Experience</span>
             <span>•</span>
-            <span>Design Portfolio</span>
+            <span>Engineering Portfolio</span>
             <span>•</span>
             <span>Technical Skills</span>
           </div>
@@ -195,7 +195,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-8 px-6 text-center text-sm text-[#6272a4] border-t border-[#44475a]">
-        <p>© 2025 Marcus Yoo • Mechanical Engineer • Building something amazing</p>
+        <p>© 2025 Marcus Yoo • Mechanical Engineer</p>
       </footer>
     </div>
   );
