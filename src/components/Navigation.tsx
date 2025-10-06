@@ -20,7 +20,7 @@ export function Navigation() {
           {/* Logo/Name */}
           <button
             onClick={() => navigate("/")}
-            className="text-xl font-medium text-[#f8f82] hover:text-[#bd93f9] transition-colors"
+            className="text-xl font-medium text-[#f8f8f2] hover:text-[#bd93f9] transition-colors"
           >
             Marcus Yoo
           </button>

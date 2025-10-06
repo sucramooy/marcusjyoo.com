@@ -3,6 +3,8 @@ import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { ExternalLink, Heart, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Navigation } from "./Navigation";
+
 
 export default function PCBrulePage() {
   const timelinePhases = [
@@ -90,6 +92,8 @@ export default function PCBrulePage() {
 
   return (
     <div className="min-h-screen bg-[#2d2d2d] text-[#f8f8f2] dark">
+      {/* Navigation bar */}
+      <Navigation />
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Header Section */}
         <div className="text-center space-y-6 mb-16">
