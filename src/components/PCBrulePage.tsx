@@ -263,7 +263,7 @@ export default function PCBrulePage() {
                               <ImageWithFallback
                                 src={phase.image}
                                 alt={`${phase.title} development phase`}
-                                className="w-full h-40 object-cover"
+                                className="w-full h-full object-cover"
                               />
                             </Card>
                           </div>
@@ -348,7 +348,7 @@ export default function PCBrulePage() {
               <div className="relative aspect-video bg-[#282a36]">
                 <iframe
                   className="w-full h-full rounded-lg"
-                  src="https://www.youtube.com/embed/w8ouSeyVjwU"
+                  src="https://www.youtube.com/embed/S7x2U8cqt70"
                   title="PCBrule Prototype Demonstration"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

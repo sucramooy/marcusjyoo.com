@@ -131,7 +131,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
                 <ImageWithFallback
                   src="PCBruleLandingPage.jpg"
                   alt="PCBrule - Printed Circuit Board Slide Rule"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </Card>
             </div>
@@ -190,7 +190,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
                 <ImageWithFallback
                   src="removablefin.png"
                   alt="CAD Design Project"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </Card>
             </div>
@@ -240,7 +240,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
                 <ImageWithFallback
                   src="poster.jpg"
                   alt="3D Printed Parts"
-                  className="w-full h-64 object-cover"
+                  className="w-full h-full object-cover"
                 />
               </Card>
             </div>
