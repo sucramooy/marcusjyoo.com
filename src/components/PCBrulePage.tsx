@@ -125,7 +125,7 @@ export default function PCBrulePage() {
             <ImageWithFallback
               src="PCBruleHero.jpg"
               alt="PCBrule - Printed Circuit Board Slide Rule"
-              className="w-full h-96 object-cover"
+              className="w-full h-full object-cover"
             />
           </Card>
         </div>
