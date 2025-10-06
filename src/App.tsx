@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Navigation } from "./components/Navigation";
 import { HomePage } from "./components/HomePage";
-import { PCBrulePage } from "./components/PCBrulePage";
+import PCBrulePage from "./components/PCBrulePage";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");

@@ -4,7 +4,7 @@ import { Badge } from "./ui/badge";
 import { ExternalLink, Heart, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
-export function PCBrulePage() {
+export default function PCBrulePage() {
   const timelinePhases = [
     {
       id: 1,

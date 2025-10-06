@@ -1,18 +1,16 @@
+// src/components/Navigation.tsx
 import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 
-interface NavigationProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
-
-export function Navigation({ currentPage, onNavigate }: NavigationProps) {
+export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "pcbrule", label: "PCBrule" }
+    { id: "home", label: "Home", to: "/" },
+    { id: "pcbrule", label: "PCBrule", to: "/pcbrule" }
   ];
 
   return (
@@ -20,9 +18,9 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Name */}
-          <button 
-            onClick={() => onNavigate("home")}
-            className="text-xl font-medium text-[#f8f8f2] hover:text-[#bd93f9] transition-colors"
+          <button
+            onClick={() => navigate("/")}
+            className="text-xl font-medium text-[#f8f82] hover:text-[#bd93f9] transition-colors"
           >
             Marcus Yoo
           </button>
@@ -30,17 +28,21 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <button
+              <NavLink
                 key={item.id}
-                onClick={() => onNavigate(item.id)}
-                className={`px-3 py-2 transition-colors ${
-                  currentPage === item.id
-                    ? "text-[#bd93f9] border-b-2 border-[#bd93f9]"
-                    : "text-[#f8f8f2] hover:text-[#bd93f9]"
-                }`}
+                to={item.to}
+                end={item.to === "/"} // make "/" match exactly
+                className={({ isActive }) =>
+                  `px-3 py-2 transition-colors ${
+                    isActive
+                      ? "text-[#bd93f9] border-b-2 border-[#bd93f9]"
+                      : "text-[#f8f8f2] hover:text-[#bd93f9]"
+                  }`
+                }
+                onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
-              </button>
+              </NavLink>
             ))}
           </div>
 
@@ -65,14 +67,10 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
                 <button
                   key={item.id}
                   onClick={() => {
-                    onNavigate(item.id);
+                    navigate(item.to);
                     setIsMenuOpen(false);
                   }}
-                  className={`px-3 py-2 text-left transition-colors ${
-                    currentPage === item.id
-                      ? "text-[#bd93f9] bg-[#44475a]"
-                      : "text-[#f8f8f2] hover:text-[#bd93f9] hover:bg-[#44475a]"
-                  }`}
+                  className="px-3 py-2 text-left transition-colors text-[#f8f8f2] hover:text-[#bd93f9] hover:bg-[#44475a]"
                 >
                   {item.label}
                 </button>
