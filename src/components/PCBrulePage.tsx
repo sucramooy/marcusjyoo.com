@@ -137,12 +137,12 @@ export default function PCBrulePage() {
             <CardContent className="p-8">
               <h3 className="text-2xl text-[#f8f8f2] mb-4">Story</h3>
               <p className="text-[#6272a4] leading-relaxed">
-                I've had this idea for nearly 6 years now. I was a freshman in high school when I first learned what a slide rule was. My FIRST robotics mentor 
-                brought a slide rule to a meeting one time and I was blown away by the magic math stick and what it could do. I've always been attracted to purely mechanical 
-                things - I love analog photography because I find it really neat that you can produce an image only using gears, curtains, levers, glass, chemistry, etc.
-                My favorite school supply throughout high school was this cherry red DigiKey PCB ruler - there was there was a satisfying quality about the gold letering 
-                and just how durable it was. Since then, I've had this nagging idea in my head, "Wouldn't it be awesome if you made a slide rule out of Printed 
-                Circuit Board?" it said. Now as a sophomore in university I'm finally acting on that idea... and it is pretty awesome I think.
+                I was a freshman in high school when I first learned what a slide rule was. My FIRST robotics mentor 
+                brought a slide rule to a meeting one day and I was blown away by the magic math stick and what it could do. I've always been attracted to purely mechanical 
+                things - I love analog photography because I find it really neat that you can produce an image using only gears, curtains, levers, glass, chemistry, etc.
+                My favorite school supply throughout high school was a cherry red DigiKey PCB ruler - there was a satisfying quality about the gold lettering 
+                and just how durable it was. Since then, I've had a nagging idea in my head, "Wouldn't it be awesome if you made a slide rule out of Printed 
+                Circuit Board?" Now as a sophomore in university I am finally acting on that idea... and it is pretty awesome in my opinion.
               </p>
             </CardContent>
           </Card>
@@ -153,7 +153,7 @@ export default function PCBrulePage() {
               <CardContent className="p-6">
                 <h3 className="text-xl text-[#f8f8f2] mb-3">Inspiration</h3>
                 <p className="text-[#6272a4] leading-relaxed">
-                  "You've had this idea for a while... What pushed you to actually make it?" you ask. Well it's simple. I'm a student in a competitive field. I wanted to make a really cool and memorable "buisness card" that I could hand out at my school's career fair. I was hoping that this memorable object would sit on a comapny recruiter's desk with my name on it and they'd see it and want to give me an internship. Selling them and bringing it to market was mostly an afterthought.
+                  "If you've had this idea for a while, what pushed you to actually make it?" you ask. Well it's simple. I am a student in a competitive field. I wanted to make a really cool and memorable "business card" that I could hand out at my school's career fair. I was hoping this memorable object would sit on a company recruiter's desk with my name on it, and they'd see it, and give me an internship. Selling them and bringing it to market was mostly an afterthought.
                 </p>
               </CardContent>
             </Card>
@@ -162,7 +162,7 @@ export default function PCBrulePage() {
               <CardContent className="p-6">
                 <h3 className="text-xl text-[#f8f8f2] mb-3">Wait, what's a slide rule?</h3>
                 <p className="text-[#6272a4] leading-relaxed">
-                A slide rule is a mechanical calculator - engineers used them before the advent of digital computers. It's a tool that operates on the principle of adding together logarithms. The Apollo astronauts carried a Pickett N600-ES to the moon, and the PCBrule is modeled after that very same design - with identical scales and calculation capabilities. It's a layout that's been time tested and literally approved by NASA.
+                A slide rule is a mechanical calculator - engineers used them before the advent of digital computers. It is a tool that operates on the principle of adding together logarithms. The Apollo astronauts carried a Pickett N600-ES to the moon, and the PCBrule is modeled after that very same design - with identical scales and calculation capabilities. It's layout has been time tested and literally approved by NASA.
                 </p>
               </CardContent>
             </Card>
