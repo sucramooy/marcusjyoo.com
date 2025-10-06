@@ -264,7 +264,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
 
       {/* Footer */}
       <footer className="py-8 px-6 text-center text-sm text-[#6272a4] border-t border-[#44475a]">
-        <p>© 2025 Marcus Yoo • Mechanical Engineer</p>
+        <p>© 2025 Marcus Yoo • Mechanical Engineering</p>
       </footer>
     </div>
   );

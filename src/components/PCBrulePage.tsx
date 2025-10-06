@@ -91,7 +91,7 @@ export default function PCBrulePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#2d2d2d] text-[#f8f8f2] dark">
+    <div className="min-h-screen bg-[#2d2d2d] text-[#f8f8f2] dark pb-16">
       {/* Navigation bar */}
       <Navigation />
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -497,7 +497,7 @@ export default function PCBrulePage() {
         </div>
 
         {/* About Purchasing & Support Section */}
-        <div className="mt-16 pt-16 border-t border-[#44475a] text-center">
+        <div className="mt-16 pt-16 pb-16 border-t border-[#44475a] text-center">
           <div className="space-y-8">
             <h2 className="text-2xl text-[#f8f8f2]">About Purchasing & Development Support</h2>
             <div className="max-w-4xl mx-auto text-left">
@@ -525,6 +525,10 @@ export default function PCBrulePage() {
             </Button>
           </div>
         </div>
+        {/* Footer */}
+        <footer className="mt-16 py-8 px-6 text-center text-sm text-[#6272a4] border-t border-[#44475a]">
+        <p>© 2025 Marcus Yoo • Mechanical Engineering</p>
+        </footer>
       </div>
     </div>
   );
