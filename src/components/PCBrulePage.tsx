@@ -4,9 +4,25 @@ import { Badge } from "./ui/badge";
 import { ExternalLink, Heart, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Navigation } from "./Navigation";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 
 export default function PCBrulePage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash === "#timeline") {
+      const timeout = setTimeout(() => {
+        const el = document.getElementById("timeline-section");
+        el.scrollIntoView({ behavior: "smooth" });
+        // Optional: clear the hash after scrolling
+        window.history.replaceState(null, "", location.pathname);
+      }, 200); // ← delay in milliseconds
+
+      return () => clearTimeout(timeout);
+    }
+  }, [location]);
   const timelinePhases = [
     {
       id: 1,
@@ -91,7 +107,7 @@ export default function PCBrulePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#2d2d2d] text-[#f8f8f2] dark pb-16">
+    <div className="min-h-screen bg-[#2d2d2d] text-[#f8f8f2] dark">
       {/* Navigation bar */}
       <Navigation />
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -182,100 +198,101 @@ export default function PCBrulePage() {
 
         {/* Development Timeline */}
         <div id="timeline-section" className="mt-16 pt-24 border-t border-[#44475a] space-y-12">
-          <div className="text-center space-y-4">
-            <h2 className="text-3xl md:text-4xl text-[#f8f8f2]">Development Timeline</h2>
-            <p className="text-lg text-[#6272a4] max-w-2xl mx-auto">
-              Tracking the journey from concept to market reality
-            </p>
-          </div>
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl md:text-4xl text-[#f8f8f2]">Development Timeline</h2>
+              <p className="text-lg text-[#6272a4] max-w-2xl mx-auto">
+                Tracking the journey from concept to market reality
+              </p>
+            </div>
 
-          {/* Timeline Container */}
-          <div className="relative">
-            {/* Vertical Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#bd93f9] via-[#bd93f9] to-[#44475a]"></div>
-            
-            {/* Timeline Items */}
-            <div className="space-y-12">
-              {timelinePhases.map((phase, index) => {
-                const isCompleted = phase.status === "completed";
-                const isCurrent = phase.status === "current";
-                const isFuture = phase.status === "future";
-                
-                return (
-                  <div key={phase.id} className="relative flex items-start gap-8">
-                    {/* Timeline Node */}
-                    <div className={`flex-shrink-0 w-4 h-4 rounded-full border-2 relative z-10 mt-2 ${
-                      isCompleted 
-                        ? "bg-[#bd93f9] border-[#bd93f9]" 
-                        : isCurrent 
-                        ? "bg-[#bd93f9] border-[#bd93f9] animate-pulse" 
-                        : "bg-[#2d2d2d] border-[#44475a]"
-                    }`}>
-                      {isCurrent && (
-                        <div className="absolute inset-0 w-4 h-4 bg-[#bd93f9] rounded-full animate-ping opacity-75"></div>
-                      )}
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-grow">
-                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                        {/* Text Content */}
-                        <div className="lg:col-span-2 space-y-4">
-                          <div className="flex flex-wrap items-center gap-3">
-                            <h3 className={`text-xl ${isFuture ? "text-[#6272a4]" : "text-[#f8f8f2]"}`}>
-                              {phase.title}
-                            </h3>
-                            <Badge 
-                              variant="outline" 
-                              className={
-                                isCompleted 
-                                  ? "border-[#50fa7b] text-[#50fa7b]" 
-                                  : isCurrent 
-                                  ? "border-[#bd93f9] text-[#bd93f9]" 
-                                  : "border-[#6272a4] text-[#6272a4]"
-                              }
-                            >
-                              {isCompleted ? "Completed" : isCurrent ? "In Progress" : "Future"}
-                            </Badge>
-                          </div>
-                          
-                          <p className={`leading-relaxed ${isFuture ? "text-[#6272a4]" : "text-[#6272a4]"}`}>
-                            {phase.description}
-                          </p>
-                          
-                          <div className="flex flex-wrap gap-2">
-                            {phase.tags.map((tag) => (
-                              <Badge 
-                                key={tag}
-                                variant="outline" 
-                                className={`border-[#44475a] ${isFuture ? "text-[#6272a4]" : "text-[#6272a4]"}`}
-                              >
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Image Content */}
-                        {phase.image && (
-                          <div className="lg:col-span-1">
-                            <Card className="overflow-hidden bg-[#383838] border-[#44475a]">
-                              <ImageWithFallback
-                                src={phase.image}
-                                alt={`${phase.title} development phase`}
-                                className="w-full h-full object-cover"
-                              />
-                            </Card>
-                          </div>
+            {/* Timeline Container */}
+            <div className="relative">
+              {/* Vertical Timeline Line */}
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#bd93f9] via-[#bd93f9] to-[#44475a]"></div>
+              
+              {/* Timeline Items */}
+              <div className="space-y-12">
+                {timelinePhases.map((phase, index) => {
+                  const isCompleted = phase.status === "completed";
+                  const isCurrent = phase.status === "current";
+                  const isFuture = phase.status === "future";
+                  
+                  return (
+                    <div key={phase.id} className="relative flex items-start gap-8">
+                      {/* Timeline Node */}
+                      <div className={`flex-shrink-0 w-4 h-4 rounded-full border-2 relative z-10 mt-2 ${
+                        isCompleted 
+                          ? "bg-[#bd93f9] border-[#bd93f9]" 
+                          : isCurrent 
+                          ? "bg-[#bd93f9] border-[#bd93f9] animate-pulse" 
+                          : "bg-[#2d2d2d] border-[#44475a]"
+                      }`}>
+                        {isCurrent && (
+                          <div className="absolute inset-0 w-4 h-4 bg-[#bd93f9] rounded-full animate-ping opacity-75"></div>
                         )}
                       </div>
+
+                      {/* Content */}
+                      <div className="flex-grow">
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                          {/* Text Content */}
+                          <div className="lg:col-span-2 space-y-4">
+                            <div className="flex flex-wrap items-center gap-3">
+                              <h3 className={`text-xl ${isFuture ? "text-[#6272a4]" : "text-[#f8f8f2]"}`}>
+                                {phase.title}
+                              </h3>
+                              <Badge 
+                                variant="outline" 
+                                className={
+                                  isCompleted 
+                                    ? "border-[#50fa7b] text-[#50fa7b]" 
+                                    : isCurrent 
+                                    ? "border-[#bd93f9] text-[#bd93f9]" 
+                                    : "border-[#6272a4] text-[#6272a4]"
+                                }
+                              >
+                                {isCompleted ? "Completed" : isCurrent ? "In Progress" : "Future"}
+                              </Badge>
+                            </div>
+                            
+                            <p className={`leading-relaxed ${isFuture ? "text-[#6272a4]" : "text-[#6272a4]"}`}>
+                              {phase.description}
+                            </p>
+                            
+                            <div className="flex flex-wrap gap-2">
+                              {phase.tags.map((tag) => (
+                                <Badge 
+                                  key={tag}
+                                  variant="outline" 
+                                  className={`border-[#44475a] ${isFuture ? "text-[#6272a4]" : "text-[#6272a4]"}`}
+                                >
+                                  {tag}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+
+                          {/* Image Content */}
+                          {phase.image && (
+                            <div className="lg:col-span-1">
+                              <Card className="overflow-hidden bg-[#383838] border-[#44475a]">
+                                <ImageWithFallback
+                                  src={phase.image}
+                                  alt={`${phase.title} development phase`}
+                                  className="w-full h-full object-cover"
+                                />
+                              </Card>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
         </div>
+        
 
         {/* Technical Specifications */}
         <div className="mt-16 pt-16 border-t border-[#44475a]">

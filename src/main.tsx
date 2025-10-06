@@ -6,10 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import PCBrulePage from "./components/PCBrulePage"; // adjust path if file is in src/pages/PCBrulePage
 import "./index.css";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <ScrollToTop/>
       <Routes>
         {/* root / keeps your existing App component */}
         <Route path="/" element={<App />} />

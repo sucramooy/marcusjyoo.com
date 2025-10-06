@@ -4,13 +4,10 @@ import { Badge } from "./ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Mail, Linkedin, Instagram, FileText, ArrowRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { useNavigate } from "react-router-dom";
 
-interface HomePageProps {
-  onNavigate: (page: string) => void;
-  onNavigateToTimeline: () => void;
-}
-
-export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
+export function HomePage() {
+  const navigate = useNavigate(); // <-- gives you routing functions
   return (
     <div className="min-h-screen bg-[#2d2d2d] text-[#f8f8f2] dark">
       {/* Hero Section - Profile and Contact */}
@@ -125,7 +122,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div 
               className="cursor-pointer transform transition-transform hover:scale-105"
-              onClick={() => onNavigate("pcbrule")}
+              onClick={() => navigate("/pcbrule")}
             >
               <Card className="overflow-hidden bg-[#383838] border-[#44475a] hover:border-[#bd93f9] transition-colors">
                 <ImageWithFallback
@@ -141,7 +138,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
                   PCB Design
                 </Badge>
                 <button
-                  onClick={() => onNavigate("pcbrule")}
+                  onClick={() => navigate("/pcbrule")}
                   className="block group"
                 >
                   <h3 className="text-2xl text-[#f8f8f2] text-left group-hover:text-[#bd93f9] transition-colors">
@@ -160,7 +157,7 @@ export function HomePage({ onNavigate, onNavigateToTimeline }: HomePageProps) {
                 <Badge variant="outline" className="border-[#44475a] text-[#6272a4]">Mechanical Engineering</Badge>
               </div>
               <Button 
-                onClick={onNavigateToTimeline}
+                onClick={() => navigate("/pcbrule#timeline")}
                 className="bg-[#bd93f9] hover:bg-[#bd93f9]/80 text-[#282a36] gap-2"
               >
                 View Development Timeline
