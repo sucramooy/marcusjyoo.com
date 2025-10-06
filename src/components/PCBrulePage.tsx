@@ -295,7 +295,7 @@ export default function PCBrulePage() {
                   </div>
                   <div className="flex justify-between">
                     <span>Surface Finish:</span>
-                    <span>Electroless Nickel Immersion Gold</span>
+                    <span>ENIG (Gold)</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Soldermask:</span>
