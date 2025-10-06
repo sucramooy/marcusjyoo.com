@@ -50,6 +50,14 @@ export default function PCBrulePage() {
     },
     {
       id: 4,
+      title: "Design Validation",
+      status: "completed",
+      description: 'Modeling of a crude physical "zeroth" prototype to validate stacked layer design and physical dimensions.',
+      tags: ["3D printing", "Prototype"],
+      image: "0thPrototype.jpg"
+    },
+    {
+      id: 5,
       title: "Panel Layout",
       status: "completed",
       description: "Finalizing the physical dimensions and component placement to optimize both functionality and manufacturing efficiency.",
@@ -57,7 +65,7 @@ export default function PCBrulePage() {
       image: "PanelLayout.jpg"
     },
     {
-      id: 5,
+      id: 6,
       title: "Graphic Design",
       status: "completed",
       description: "Creating the visual scale markings, numbering systems, and aesthetic elements that will be silk-screened/etched to reveal the gold beneath the soldermask.",
@@ -65,7 +73,7 @@ export default function PCBrulePage() {
       image: "GraphicDesign.jpg"
     },
     {
-      id: 6,
+      id: 7,
       title: "PCB Design",
       status: "completed",
       description: "Translating the mechanical and graphic designs into manufacturable PCB files using KiCad, ensuring all tolerances and manufacturer specifications are met.",
@@ -73,7 +81,7 @@ export default function PCBrulePage() {
       image: "PCBDesign.jpg"
     },
     {
-      id: 7,
+      id: 8,
       title: "Prototyping",
       status: "current",
       description: "First prototype PCB manufacturing and assembly. Testing mechanical fit, scale accuracy, and overall usability. Currently working through cursor window challenges.",
@@ -81,7 +89,7 @@ export default function PCBrulePage() {
       image: "Prototyping.jpg"
     },
     {
-      id: 8,
+      id: 9,
       title: "Development of Mass Manufacture Techniques",
       status: "future",
       description: "Optimizing the design and manufacturing process for larger scale production while maintaining quality and cost effectiveness.",
@@ -89,7 +97,7 @@ export default function PCBrulePage() {
       image: null
     },
     {
-      id: 9,
+      id: 10,
       title: "Shipping and Logistics",
       status: "future",
       description: "Setting up supply chain, packaging design, and distribution channels for getting PCBrules to customers worldwide.",
@@ -97,7 +105,7 @@ export default function PCBrulePage() {
       image: null
     },
     {
-      id: 10,
+      id: 11,
       title: "Manufacture and Selling",
       status: "future",
       description: "Full production launch with online sales platform, customer support, and ongoing product improvements based on user feedback.",
