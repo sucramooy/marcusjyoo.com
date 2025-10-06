@@ -322,7 +322,7 @@ export function PCBrulePage() {
                     <span>$6.75/unit</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Total Cost (est):</span>
+                    <span>Total Unit Cost (est):</span>
                     <span>$24.50</span>
                   </div>
                 </div>
