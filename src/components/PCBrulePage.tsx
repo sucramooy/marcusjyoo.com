@@ -132,9 +132,9 @@ export default function PCBrulePage() {
           </p>
           
           {/* Ko-fi Support Button + Reddit Search*/}
-          <div className="pt-4 flex items-center justify-center gap-6">
+          <div className="pt-4 flex flex-col mdS:flex-row items-center justify-center gap-6">
             <Button 
-              className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto gap-3"
+              className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto"
               onClick={() => window.open('https://ko-fi.com/marcusjyoo', '_blank')}
             >
               <Heart className="h-5 w-5" />
@@ -142,7 +142,7 @@ export default function PCBrulePage() {
             </Button>
 
             <Button 
-              className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto gap-3"
+              className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto"
               onClick={() => window.open('https://www.reddit.com/r/sliderules/search?q=PCBrule&restrict_sr=1', '_blank')}
             >
               See the discussion on Reddit

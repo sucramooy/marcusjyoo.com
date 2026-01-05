@@ -157,17 +157,17 @@ export function HomePage() {
                 <Badge variant="outline" className="border-[#44475a] text-[#6272a4]">Mechanical Engineering</Badge>
               </div>
 
-              <div className="pt-4 flex items-center justify-center gap-6">
+              <div className="pt-4 flex flex-col md:flex-row items-center justify-center gap-6">
                 <Button 
                   onClick={() => navigate("/pcbrule#timeline")}
-                  className="bg-[#bd93f9] hover:bg-[#bd93f9]/80 text-[#282a36] px-6 py-3 gap-3"
+                  className="bg-[#bd93f9] hover:bg-[#bd93f9]/80 text-[#282a36] px-6 py-3"
                 >
                   View Development Timeline
                   <ArrowRight className="h-5 w-5" />
                 </Button>
 
                 <Button 
-                className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-6 py-3 gap-3"
+                className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-6 py-3"
                 onClick={() => window.open('https://www.reddit.com/r/sliderules/search?q=PCBrule&restrict_sr=1', '_blank')}
                 >
                 See the discussion on Reddit
