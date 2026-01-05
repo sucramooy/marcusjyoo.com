@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { Card, CardContent } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { ExternalLink, Heart, Play } from "lucide-react";
+import { ExternalLink, Heart, Megaphone } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { Navigation } from "./Navigation";
 import { useEffect } from "react";
@@ -131,8 +131,8 @@ export default function PCBrulePage() {
             A pocket slide rule made from printed circuit board - combining vintage calculation methods with modern PCB manufacturing
           </p>
           
-          {/* Ko-fi Support Button */}
-          <div className="pt-4">
+          {/* Ko-fi Support Button + Reddit Search*/}
+          <div className="pt-4 flex sm:flex-row items-center justify-center gap-6">
             <Button 
               className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto gap-3"
               onClick={() => window.open('https://ko-fi.com/marcusjyoo', '_blank')}
@@ -140,7 +140,18 @@ export default function PCBrulePage() {
               <Heart className="h-5 w-5" />
               Support the development here!
             </Button>
+
+            <Button 
+              className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto gap-3"
+              onClick={() => window.open('https://www.reddit.com/r/sliderules/search?q=PCBrule&restrict_sr=1', '_blank')}
+            >
+              See the discussion on Reddit
+              <Megaphone className="h-5 w-5" />
+            </Button>
           </div>
+
+        
+        
         </div>
 
         {/* Hero Image */}
