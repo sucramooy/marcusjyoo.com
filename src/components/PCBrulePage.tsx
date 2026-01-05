@@ -132,7 +132,7 @@ export default function PCBrulePage() {
           </p>
           
           {/* Ko-fi Support Button + Reddit Search*/}
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="pt-4 flex flex-row sm:flex-col items-center justify-center gap-6">
             <Button 
               className="bg-[#ff5722] hover:bg-[#ff5722]/80 text-white px-8 py-3 h-auto gap-3"
               onClick={() => window.open('https://ko-fi.com/marcusjyoo', '_blank')}
