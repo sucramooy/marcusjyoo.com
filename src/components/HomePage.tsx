@@ -157,7 +157,7 @@ export function HomePage() {
                 <Badge variant="outline" className="border-[#44475a] text-[#6272a4]">Mechanical Engineering</Badge>
               </div>
 
-              <div className="pt-4 flex flex-row sm:flex-col items-center justify-center gap-6">
+              <div className="pt-4 flex items-center justify-center gap-6">
                 <Button 
                   onClick={() => navigate("/pcbrule#timeline")}
                   className="bg-[#bd93f9] hover:bg-[#bd93f9]/80 text-[#282a36] px-6 py-3 gap-3"
