@@ -272,7 +272,16 @@ export function HomePage() {
 
       {/* Footer */}
       <footer className="py-8 px-6 text-center text-sm text-[#6272a4] border-t border-[#44475a]">
-        <p>© 2025 Marcus Yoo • Mechanical Engineering</p>
+        <p>© 2026 Marcus Yoo • Mechanical Engineering • {' '}
+          <a
+            href="https://github.com/sucramooy/marcusjyoo.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline opacity-100 hover:opacity-80"
+          >
+            Click to see the internals of this site!
+          </a>
+        </p>
       </footer>
     </div>
   );
